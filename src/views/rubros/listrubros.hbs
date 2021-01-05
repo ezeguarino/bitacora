@@ -1,0 +1,44 @@
+<div class="container">
+    <div class="row">
+
+        <div clas="col-4">
+            <a href="/rubros/add" class="btn btn-primary">Nuevo Rubro</a>
+
+        </div>
+
+
+        <div class="col-12 mt-5"></div>
+        <table class="table table-hover">
+
+            <thead>
+                <th>ID</th>
+                <th>Rubro</th>
+                <th>Habilitar / Deshabilitar</th>
+                <th>Editar</th>
+
+            </thead>
+
+            <tbody>
+                {{#each rubros}}
+                <tr>
+                    <td>{{id}}</td>
+                    <td>{{nombre}}</td>
+                    {{#if habilitado}}
+                    <td><a href="/rubros/deshabilitar/{{id}}" <i
+                            class="btn fas fa-toggle-on fa-2x text-success"></i></a>
+                    </td>
+                    {{else}}
+                    <td><a href="/rubros/habilitar/{{id}}" <i class="btn fas fa-toggle-off fa-2x text-danger"></i></a>
+                    </td>
+                    {{/if}}
+                    <td><a href="/rubros/edit/{{id}}"><i class="fa fa-pencil text-primary"></i></a></td>
+
+
+
+
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</div>

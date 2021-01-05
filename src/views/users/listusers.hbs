@@ -1,0 +1,46 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12 mt-5"></div>
+        <table class="table table-hover">
+
+            <thead>
+                <th>ID</th>
+                <th>Nombre de usuario</th>
+                <th>Nombre Completo</th>
+                <th>Habilitar / Deshabilitar</th>
+                <th>Es Administrador</th>
+
+            </thead>
+
+            <tbody>
+                {{#each users}}
+                <tr>
+                    <td>{{id}}</td>
+                    <td>{{username}}</td>
+                    <td>{{fullname}}</td>
+                    {{#if habilitado}}
+                    <td><a href="/users/deshabilitar/{{id}}" <i class="btn fas fa-toggle-on fa-2x text-success"></i></a>
+                    </td>
+                    {{else}}
+                    <td><a href="/users/habilitar/{{id}}" <i class="btn fas fa-toggle-off fa-2x text-danger"></i></a>
+                    </td>
+                    {{/if}}
+                    {{#if admin}}
+                    <td><a href="/users/deshabilitarAdmin/{{id}}" <i
+                            class="btn fas fa-toggle-on fa-2x text-success"></i></a>
+                    </td>
+                    {{else}}
+                    <td><a href="/users/habilitarAdmin/{{id}}" <i
+                            class="btn fas fa-toggle-off fa-2x text-danger"></i></a>
+                    </td>
+                    {{/if}}
+
+
+
+
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</div>

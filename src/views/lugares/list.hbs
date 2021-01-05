@@ -1,0 +1,39 @@
+<div class="container p-4">
+    <div class="row">
+
+        {{#each lugares}}
+        <div class="col-md-3">
+            <div class="card text-center">
+                <div class="card-body">
+
+                    <h3 class="card-title text-uppercase">
+                        {{nombre}}
+                    </h3>
+
+
+                    <p class="m-2">Sitio Web: <a href="{{url}}" target="_blank">Ir a la Web</a> </p>
+                    <p class="m-2">Rubro: {{rubro_nombre}}</p>
+                    <p class="m-2">País: {{pais_nombre}}</p>
+                    <p class="m-2">Descripción: {{descripcion}}</p>
+                    <a href="/lugares/edit/{{id}}" class="btn btn-secondary">Editar</a>
+                    <a href="/lugares/delete/{{id}}" class="btn btn-danger">Eliminar</a>
+
+
+
+                </div>
+            </div>
+        </div>
+
+        {{else}}
+        <div class="col-md-4 mx-auto">
+            <div class="card card-body text-center">
+                <p>Aún no tienes lugares cargados</p>
+                <p>¡Hazlo ahora!</p>
+                <a href="/lugares/add" class="btn btn-primary">Crear uno</a>
+            </div>
+
+        </div>
+
+        {{/each}}
+    </div>
+</div>
